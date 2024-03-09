@@ -2,11 +2,11 @@ import os
 import time
 from openai import OpenAI
 
-os.environ["OPENAI_API_KEY"] = "asst_qTL3e7ItDIhtNUmDtWum1cA0"
+os.environ["OPENAI_API_KEY"] = ""
 
 client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
-assistant_id = "asst_qTL3e7ItDIhtNUmDtWum1cA0"
+assistant_id = ""
 
 def get_prompt(question):
     try:
@@ -26,7 +26,7 @@ def get_prompt(question):
                 break
 
         messages = client.beta.threads.messages.list(thread_id=thread.id)
-        assistant_response = messages.data[1].content[0].text.value  # Assuming assistant's response is the second message
+        assistant_response = messages.data[1].content[0].text.value
         return assistant_response
 
     except Exception as e:
