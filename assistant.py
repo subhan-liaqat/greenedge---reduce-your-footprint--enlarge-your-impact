@@ -1,6 +1,9 @@
 import os
 import time
 from openai import OpenAI
+import streamlit as st
+
+st.write("Welcome to GreenEdge 👋")
 
 os.environ["OPENAI_API_KEY"] = ""
 
